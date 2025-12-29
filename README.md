@@ -1,175 +1,175 @@
-# job-portal
-🚀 Job Portal Web App – Microservices Architecture
-A modern, scalable job portal application built with a microservices architecture using industry-leading technologies. This production-grade system features AI-powered career tools, real-time communication, and enterprise-grade infrastructure.
+🏢 Overview
+A production-ready job portal platform built with a microservices architecture, designed for scalability and performance. This enterprise-grade application bridges job seekers with recruiters through AI-powered tools, real-time communication, and a robust subscription system.
 
-✨ Key Features
-🤖 AI Career Guidance – Personalized career path recommendations
+🌟 Core Features
+AI-Powered Career Suite
+Resume Analyzer: Leverages Gemini AI for intelligent resume scoring, keyword optimization, and personalized improvement suggestions
 
-📄 AI Resume Analyzer – Intelligent resume scoring and optimization tips
+Career Guidance: Provides data-driven career path recommendations based on skills, experience, and market trends
 
-👥 Multi-role Accounts – Separate workflows for job seekers and recruiters
+Dual-Role Ecosystem
+Job Seekers: Complete profile management, AI-enhanced applications, and career tracking
 
-📊 Recruiter Dashboards – Advanced analytics and candidate management
+Recruiters: Advanced dashboard with candidate analytics, subscription management, and streamlined hiring workflows
 
-🔔 Real-time Notifications – Email notifications for application updates
+Enterprise Infrastructure
+Real-time Notifications: Event-driven email system powered by Kafka
 
-💳 Subscription System – Razorpay integration for premium features
+Secure Authentication: JWT-based auth with Redis session management and complete password reset flow
 
-🔐 Secure Authentication – Complete password reset flow with email verification
+Subscription Management: Razorpay integration with tiered premium features
 
-📈 Profile Enhancement – Bio, skills, and experience management
+🏗️ Technical Architecture
+Event-Driven Microservices
+Our architecture employs independent, loosely-coupled services communicating through Apache Kafka:
 
-🏗️ System Architecture
-text
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Next.js       │    │   API Gateway   │    │   Auth Service  │
-│   Frontend      │◄──►│   (Express)     │◄──►│   (Node.js)     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         │               ┌───────┴───────┐               │
-         │               │   Apache       │               │
-         │               │   Kafka        │◄──────────────┘
-         │               └───────┬───────┘
-         │                       │
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Redis         │    │   Job Service   │    │   Email Service │
-│   Cache         │    │   (Node.js)     │◄──►│   (Node.js)     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-                               │
-                     ┌─────────────────┐    ┌─────────────────┐
-                     │   PostgreSQL    │    │   AI Services   │
-                     │   Database      │    │   (OpenAI API)  │
-                     └─────────────────┘    └─────────────────┘
-🛠️ Technology Stack
-Frontend
-Next.js 14 – React framework with App Router
+Auth Service: Handles authentication, authorization, and user management
 
-TypeScript – End-to-end type safety
+Profile Service: Manages user profiles, skills, and AI-powered career insights
 
-Tailwind CSS – Utility-first styling
+Job Service: Processes job listings, applications, and matching algorithms
 
-Backend Microservices
-Node.js & Express – Lightweight, fast API services
+Notification Service: Orchestrates email workflows and real-time alerts
 
-TypeScript – Type-safe backend development
+Payment Service: Manages Razorpay subscriptions and billing cycles
 
-Apache Kafka – Event-driven communication
+Data Layer Strategy
+PostgreSQL: Primary data store with Prisma ORM for type-safe queries
 
-Redis – Caching and session management
+Redis: High-performance caching for sessions and frequent queries
 
-Database & Storage
-PostgreSQL – Primary relational database
-
-Prisma ORM – Database migrations and queries
-
-Integrations
-Razorpay – Payment processing
-
-Resend/Nodemailer – Email notifications
-
-OpenAI API – AI-powered features
-
-📚 What You'll Learn
-This project demonstrates:
-
-Microservices Architecture – Design, deploy, and scale independent services
-
-Event-Driven Communication – Implement Kafka for inter-service messaging
-
-AI Integration – Build resume analysis and career guidance features
-
-Payment Systems – Razorpay subscription flows
-
-Real-time Notifications – Email workflows with Kafka consumers
-
-Scalable Authentication – JWT-based auth with Redis sessions
-
-Production Best Practices – Error handling, logging, monitoring
+Kafka: Central nervous system for reliable inter-service communication
 
 🚀 Getting Started
 Prerequisites
-Node.js 18+
+Node.js 18+ & npm
 
-Docker & Docker Compose (for Kafka, PostgreSQL, Redis)
+Docker & Docker Compose
 
 PostgreSQL 14+
 
-Basic knowledge of React, Node.js, and databases
+Basic understanding of microservices concepts
 
-Quick Start
+Quick Deployment
 bash
-# Clone the repository
-git clone https://github.com/yourusername/job-portal-microservices.git
-cd job-portal-microservices
+# Clone and setup
+git clone https://github.com/yourusername/job-portal.git
+cd job-portal
 
-# Start infrastructure services
-docker-compose up -d kafka postgres redis
+# Launch infrastructure
+docker-compose up -d
 
-# Install dependencies and run services
-npm run setup
+# Install dependencies
+npm run install:all
+
+# Start development servers
 npm run dev
-📁 Project Structure
-text
-job-portal-microservices/
-├── frontend/                 # Next.js application
-├── api-gateway/             # API Gateway service
-├── services/
-│   ├── auth-service/        # Authentication & authorization
-│   ├── job-service/         # Job listings and applications
-│   ├── profile-service/     # User profiles and AI analysis
-│   ├── notification-service/# Email and real-time notifications
-│   └── payment-service/     # Razorpay subscriptions
-├── shared/                  # Common utilities and types
-├── kafka/                   # Kafka producers/consumers config
-└── docker-compose.yml       # Infrastructure setup
-🔧 Environment Variables
+Environment Configuration
+Create .env files in respective service directories:
+
 env
-# PostgreSQL
-DATABASE_URL=postgresql://user:pass@localhost:5432/jobportal
+# Core Services
+DATABASE_URL="postgresql://user:password@localhost:5432/jobportal"
+REDIS_URL="redis://localhost:6379"
+KAFKA_BROKER="localhost:9092"
+JWT_SECRET="your-secure-jwt-secret"
 
-# Redis
-REDIS_URL=redis://localhost:6379
+# External Integrations
+GEMINI_API_KEY="your-gemini-api-key"
+RAZORPAY_KEY_ID="your-razorpay-key"
+RAZORPAY_KEY_SECRET="your-razorpay-secret"
+RESEND_API_KEY="your-resend-key"
+📂 Project Structure
+text
+job-portal/
+├── frontend/                    # Next.js 14 application
+│   ├── app/                    # App router structure
+│   ├── components/             # Reusable UI components
+│   └── lib/                    # Client-side utilities
+├── api-gateway/                # Unified API entry point
+├── shared/                     # Common types and utilities
+└── services/
+    ├── auth-service/           # Authentication microservice
+    ├── profile-service/        # Profile & AI features
+    ├── job-service/            # Job management
+    ├── notification-service/   # Email & notifications
+    └── payment-service/        # Subscription handling
+🔧 Development
+Running Services Individually
+bash
+# Start specific service
+cd services/auth-service
+npm run dev
 
-# Kafka
-KAFKA_BROKER=localhost:9092
+# Or use the unified script
+npm run dev:auth
+Testing the Architecture
+bash
+# Run all tests
+npm run test
 
-# JWT
-JWT_SECRET=your_jwt_secret
+# Test specific service
+npm run test:profile
 
-# Razorpay
-RAZORPAY_KEY_ID=your_key_id
-RAZORPAY_KEY_SECRET=your_key_secret
+# Integration tests
+npm run test:integration
+📊 Performance Features
+Scalability Design
+Horizontal Scaling: Each service scales independently based on load
 
-# OpenAI
-OPENAI_API_KEY=your_openai_key
-📈 Performance & Scaling
-Horizontal Scaling – Each microservice can be scaled independently
+Database Optimization: Connection pooling, read replicas, and strategic indexing
 
-Caching Strategy – Redis for frequent queries and session storage
+Caching Strategy: Multi-layer Redis caching for optimal response times
 
-Database Optimization – Connection pooling, indexed queries
+Message Queues: Kafka ensures no event loss during high traffic
 
-Message Queue – Kafka ensures reliable event delivery
+Monitoring & Observability
+Structured logging across all services
+
+Health check endpoints for each microservice
+
+Performance metrics collection
+
+Error tracking and alerting
 
 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Please see our Contributing Guidelines for details.
+
+Fork the repository
+
+Create a feature branch (git checkout -b feature/amazing-feature)
+
+Commit changes (git commit -m 'Add amazing feature')
+
+Push to branch (git push origin feature/amazing-feature)
+
+Open a Pull Request
 
 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Distributed under the MIT License. See LICENSE for more information.
 
-💡 Future Enhancements
-Real-time chat between recruiters and candidates
+🔮 Roadmap
+Short-term
+Real-time chat implementation
 
 Advanced analytics dashboard
 
-Mobile application (React Native)
+WebSocket integration for live updates
 
-Job recommendation engine
+Long-term
+Mobile app (React Native)
 
 Video interview scheduling
 
-🙏 Acknowledgments
-Inspired by modern job portals like LinkedIn, Indeed
+Advanced ML job matching
 
-Built for educational purposes to demonstrate microservices architecture
+Multi-language support
 
+🙌 Acknowledgments
+Gemini AI for powerful language model capabilities
+
+Apache Kafka for reliable event streaming
+
+The microservices community for architectural patterns and best practices
+
+All contributors who help improve this project
