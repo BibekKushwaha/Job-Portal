@@ -160,7 +160,7 @@ export const forgotPassword = TryCatch(async (req, res, next) => {
 
   const message = {
     to: email,
-    subject: "RESET Your Password - hireheaven",
+    subject: "RESET Your Password - Job Portal",
     html: forgotPasswordTemplate(resetLink),
   };
 

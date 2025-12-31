@@ -38,7 +38,7 @@ export const startSendMailConsumer = async () => {
           });
 
           await transporter.sendMail({
-            from: "Hireheaven <no-reply>",
+            from: "Job Portal <no-reply>",
             to,
             subject,
             html,

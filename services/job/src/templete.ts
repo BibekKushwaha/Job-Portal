@@ -87,7 +87,7 @@ Your application for the position of
 <strong>${jobTitle}</strong> has been updated.
 </p>
 <p class="text-muted">
-You can check your application status at HireHeaven.
+You can check your application status at Job Portal.
 </p>
 <p class="text-muted">
 Thank you for applying!
@@ -98,7 +98,7 @@ Thank you for applying!
 <tr>
 <td class="footer">
 <p class="footer-text">
-© 2025 HireHeaven. All rights reserved.
+© 2025 JobPortal. All rights reserved.
 </p>
 <p class="footer-text">
 This is an automated message, please do not reply.
