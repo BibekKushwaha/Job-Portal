@@ -1,4 +1,4 @@
-🚀 Job Portal Web Application
+**🚀 Job Portal Web Application**
 Microservices Architecture • AI-Powered • Production-Grade
 
 A scalable, real-world Job Portal Web Application built using a microservices architecture and modern full-stack technologies.
@@ -6,7 +6,7 @@ This project demonstrates how enterprise-level platforms are designed using even
 
 The system supports job seekers and recruiters, provides AI-powered career tools, and is designed for high scalability, performance, and maintainability.
 
-✨ Key Features
+**✨ Key Features**
 
 🤖 AI Career Guidance – Personalized career path recommendations
 
@@ -40,36 +40,36 @@ Independent, scalable backend services
 
 Each service can be deployed and scaled independently, following real-world production practices.
 
-🛠️ Technology Stack
-Frontend
+**🛠️ Technology Stack**
+ **Frontend**
 
-Next.js (App Router)
+  Next.js (App Router)
+  
+  TypeScript
+  
+  Tailwind CSS
 
-TypeScript
+**Backend**
 
-Tailwind CSS
+  Node.js
+  
+  Express.js
+  
+  TypeScript
+  
+  Apache Kafka
+  
+  Redis
+  
+  Database & Tools
+  
+  PostgreSQL
+  
+  Prisma ORM
+  
+  Docker & Docker Compose
 
-Backend
-
-Node.js
-
-Express.js
-
-TypeScript
-
-Apache Kafka
-
-Redis
-
-Database & Tools
-
-PostgreSQL
-
-Prisma ORM
-
-Docker & Docker Compose
-
-Integrations
+**Integrations**
 
 Razorpay – Subscription & payments
 
@@ -77,7 +77,7 @@ Email Services (Nodemailer / Resend) – Notifications
 
 AI APIs – Resume analysis & career guidance
 
-📁 Project Structure
+**📁 Project Structure**
 job-portal/
 ├── frontend/                  # Next.js frontend application
 │   ├── src/
@@ -95,7 +95,7 @@ job-portal/
 ├── .gitignore
 └── README.md
 
-🚀 Getting Started
+**🚀 Getting Started**
 Prerequisites
 
 Node.js (v18+)
@@ -123,7 +123,7 @@ cd ../job && npm install
 # Run services
 npm run dev
 
-🔐 Environment Variables
+**🔐 Environment Variables**
 
 Create .env files for required services:
 
@@ -144,12 +144,12 @@ RAZORPAY_KEY_ID=your_key_id
 RAZORPAY_KEY_SECRET=your_key_secret
 
 # AI
-OPENAI_API_KEY=your_api_key
+GEMINI_API_KEY=your_api_key
 
 
 ⚠️ Never commit .env files. Use .env.example instead.
 
-📚 What You’ll Learn From This Project
+**📚 What You’ll Learn From This Project**
 
 Designing microservices architecture
 
@@ -165,7 +165,7 @@ Scalable backend service orchestration
 
 Structuring a large production-ready codebase
 
-📈 Performance & Scalability
+**📈 Performance & Scalability**
 
 Horizontal Scaling – Independent services
 
@@ -175,16 +175,16 @@ Kafka Messaging – Reliable async processing
 
 Optimized Database Queries – Prisma + indexing
 
-🤝 Contributing
+**🤝 Contributing**
 
 Contributions are welcome!
 Feel free to open issues or submit pull requests.
 
-📄 License
+**📄 License**
 
 This project is licensed under the MIT License.
 
-💡 Future Enhancements
+**💡 Future Enhancements**
 
 Real-time chat between recruiters and candidates
 
@@ -196,9 +196,9 @@ Job recommendation engine
 
 Video interview scheduling
 
-🙏 Acknowledgments
+**🙏 Acknowledgments**
 
 Inspired by modern platforms like LinkedIn and Indeed.
 Built for learning, scalability, and real-world system design.
 
-⭐ If you find this project useful, consider giving it a star!
+**⭐ If you find this project useful, consider giving it a star!**
