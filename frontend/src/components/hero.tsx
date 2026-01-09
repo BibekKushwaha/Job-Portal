@@ -1,11 +1,13 @@
 'use client';
 
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function HeroSection() {
   const { theme, resolvedTheme } = useTheme();
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function HeroSection() {
             {/* Stats Row */}
             <div className="stats-row animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <div className="stat-card">
-                <div className="stat-value">10k+</div>
+                <div className="stat-value">1k+</div>
                 <div className="stat-label">Active Jobs</div>
               </div>
               <div className="stat-card">
@@ -54,14 +56,14 @@ export default function HeroSection() {
                 <div className="stat-label">Companies</div>
               </div>
               <div className="stat-card">
-                <div className="stat-value">50k+</div>
+                <div className="stat-value">10k+</div>
                 <div className="stat-label">Job Seekers</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="cta-buttons animate-slide-up" style={{ animationDelay: '0.5s' }}>
-              <button className="btn btn-primary">
+              <button className="btn btn-primary" onClick={() => router.push('/jobs')}>
                 <span className="btn-icon">🔍</span>
                 Browse Jobs
               </button>
